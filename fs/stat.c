@@ -1,4 +1,4 @@
-/*
+ /*
  *  linux/fs/stat.c
  *
  *  Copyright (C) 1991, 1992  Linus Torvalds
@@ -57,7 +57,7 @@ EXPORT_SYMBOL(vfs_getattr);
 
 int vfs_fstat(unsigned int fd, struct kstat *stat)
 {
-	struct file *f = fget(fd);
+	struct file *f = fget_raw(fd);
 	int error = -EBADF;
 
 	if (f) {
